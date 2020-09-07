@@ -1,9 +1,8 @@
 import React from "react";
-import SearchName from "./nameSearch.js";
-import SearchDOB from "./DobSearch.js";
-import "../style/nav.css";
+import SearchName from "./SearchName.js";
+import "../styles/Nav.css";
 
-function nav() {
+function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <button
@@ -18,14 +17,11 @@ function nav() {
         <span className="navbar-toggler-icon" />
       </button>
       <div className="collapse navbar-collapse row" id="navbarNav">
-        {/* <div className="input-group col-8">
-          <SearchDOB />
-        </div> */}
-        <div className="areaSearch col-4">
+        <div className="search-area col-4">
           <SearchName />
         </div>
       </div>
     </nav>
   );
 }
-export default nav;
+export default Nav;

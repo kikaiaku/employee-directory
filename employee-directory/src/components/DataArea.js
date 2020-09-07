@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import DataTable from "./table";
-import Nav from "./nav";
+import DataTable from "./DataTable";
+import Nav from "./Nav";
 import API from "../utils/API";
-import "../style/area.css";
-import DataContext from "../utils/DataContext";
+import "../styles/DataArea.css";
+import DataAreaContext from "../utils/DataAreaContext";
 
 const DataArea = () => {
   const [developerState, setDeveloperState] = useState({
@@ -84,13 +84,15 @@ const DataArea = () => {
       console.log(filter, values)
     if(values.indexOf(filter.toLowerCase()) !== -1){
       return item
+    }else{
+      return null;
     };
     });
 
     setDeveloperState({ ...developerState, filteredUsers: filteredList });
   };
 
-  ///https://stackoverflow.com/questions/53120972/how-to-call-loading-function-with-react-useeffect-only-once
+  
   useEffect(() => {
     API.getUsers().then(results => {
       console.log(results.data.results);
@@ -103,14 +105,14 @@ const DataArea = () => {
   }, []);
 
   return (
-    <DataContext.Provider
+    <DataAreaContext.Provider
       value={{ developerState, handleSearchChange, handleSort }}
     >
       <Nav />
       <div className="data-area">
         {developerState.filteredUsers.length > 0 ? <DataTable /> : <div></div>}
       </div>
-    </DataContext.Provider>
+    </DataAreaContext.Provider>
   );
 };
 

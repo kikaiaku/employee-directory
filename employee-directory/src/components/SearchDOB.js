@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
+// import "../styles/SearchBox.css";
+import DataAreaContext from "../utils/DataAreaContext";
 
-import DataContext from "../utils/DataContext";
-
-const DobSearch = () => {
-  const context = useContext(DataContext);
+const SearchDOB = () => {
+  const context = useContext(DataAreaContext);
 
   return (
-    <div className="searchBox">
+    <div className="searchbox">
        <div className="input-group">
       <div className="input-group-prepend">
         <span className="input-group-text" id="">
@@ -19,4 +19,4 @@ const DobSearch = () => {
     </div>
   );
 };
-export default DobSearch;
+export default SearchDOB;

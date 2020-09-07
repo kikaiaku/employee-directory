@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import DataBody from "./body";
-import "../style/table.css";
-import DataAreaContext from "../utils/DataContext";
+import DataBody from "./DataBody";
+import "../styles/DataTable.css";
+import DataAreaContext from "../utils/DataAreaContext";
 
-class table extends React.Component{
-  render() {
-    const context = useContext(DataAreaContext);
+const DataTable = () => {
+  const context = useContext(DataAreaContext);
+
   return (
 
-    <div className="dTable mt-5">
+    <div className="datatable mt-5">
       <table
         id="table"
         className="table table-striped table-hover table-condensed"
@@ -39,6 +39,5 @@ class table extends React.Component{
     </div>
   );
 }
-}
 
-export default table;
+export default DataTable;

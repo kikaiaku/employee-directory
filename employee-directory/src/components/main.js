@@ -1,14 +1,14 @@
 
 import React from "react";
-import Area from "./area";
+import DataArea from "./DataArea";
+import "../styles/Main.css";
 
-
-function main () {
+function Main () {
     return (
       <>
-        <Area />
+        <DataArea />
       </>
     );
   };
 
-export default main;
+export default Main;

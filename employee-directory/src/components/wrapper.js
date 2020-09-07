@@ -1,8 +1,7 @@
-
 import React from 'react';
+import "../styles/Wrapper.css";
 
-
-function wrapper({ children }) {
+function Wrapper({ children }) {
   return (
       <div className="wrapper">
         { children }
@@ -10,4 +9,4 @@ function wrapper({ children }) {
   );
 }
 
-export default wrapper;
+export default Wrapper;
